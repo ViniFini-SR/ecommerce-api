@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS client (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS sale (
+    id BIGSERIAL PRIMARY KEY,
+    client_id BIGINT NOT NULL REFERENCES client(id),
+    sku VARCHAR(100) NOT NULL,
+    quantity INTEGER NOT NULL,
+    price NUMERIC(12,2) NOT NULL,
+    sold_at TIMESTAMP DEFAULT now()
+);
