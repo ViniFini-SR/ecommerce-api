@@ -16,5 +16,5 @@ public class Sale {
     private String sku;
     private Integer quantity;
     private BigDecimal price;
-    private OffsetDateTime soldAt;
+    private OffsetDateTime soldAt = OffsetDateTime.now();
 }

@@ -1,13 +1,25 @@
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://db:5432/ecommerce}
-    username: ${SPRING_DATASOURCE_USERNAME:app}
-    password: ${SPRING_DATASOURCE_PASSWORD:pass}
+    url: jdbc:postgresql://localhost:5432/ecommerce
+    username: app
+    password: pass
     driver-class-name: org.postgresql.Driver
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
-    baseline-on-migrate: true
+#spring:
+#  application:
+#    name: ecommerce-service
+#  datasource:
+#    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ecommerce}
+#    username: ${SPRING_DATASOURCE_USERNAME:app}
+#    password: ${SPRING_DATASOURCE_PASSWORD:pass}
+#    driver-class-name: org.postgresql.Driver
+#  flyway:
+#    enabled: false
+#    url: jdbc:postgresql://localhost:5432/ecommerce
+#    user: app
+#    password: pass
+#    baseline-on-migrate: true
+#    driver-class-name: org.postgresql.Driver
+#    locations: classpath:db/migration
 
 server:
   port: ${PORT:8080}

@@ -1,6 +1,7 @@
 package com.example.ecommerce.dao;
 
 import com.example.ecommerce.model.Client;
+import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -8,12 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
+@RequiredArgsConstructor
 public class ClientDao {
     private final JdbcTemplate jdbc;
-
-    public ClientDao(JdbcTemplate jdbc) {
-        this.jdbc = jdbc;
-    }
 
     private final RowMapper<Client> mapper = (rs, rowNum) ->
             new Client(rs.getLong("id"), rs.getString("name"), rs.getString("email"));
